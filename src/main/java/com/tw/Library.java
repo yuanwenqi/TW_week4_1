@@ -35,8 +35,6 @@ public class Library {
             case "3":
                 System.exit(0);
                 break;
-            default:
-                mainView();
         }
 
     }
@@ -45,15 +43,15 @@ public class Library {
     public void addStudent(){
         Scanner keyboard = new Scanner(System.in);
         String input = keyboard.nextLine();
-        String pattern = "(\\S+\\,\\d+)(\\,\\S+:(\\d+)(\\.\\d+)?){4}";
+        String pattern = "(\\W+\\,\\d+)(\\,\\W+:(\\d+)(\\.\\d+)?){4}";
         boolean isMatch = Pattern.matches(pattern, input);
         if (isMatch){
             Student oneStudent = getStudnet(input);
             students.put(oneStudent.getId(),oneStudent);
             System.out.println("学生"+oneStudent.getName()+"的成绩被添加");
-            mainView();
+//            mainView();
         }else{
-            System.out.println("请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）：");
+            System.out.println("请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）:");
             addStudent();
         }
 
