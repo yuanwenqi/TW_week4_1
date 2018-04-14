@@ -51,10 +51,12 @@ public class Library {
             Student oneStudent = getStudnet(input);
             students.put(oneStudent.getId(),oneStudent);
             System.out.println("学生"+oneStudent.getName()+"的成绩被添加");
+            mainView();
         }else{
             System.out.println("请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）：");
+            addStudent();
         }
-//        mainView();
+
     }
 
     public void getGrades(){
